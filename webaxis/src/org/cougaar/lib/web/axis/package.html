@@ -1,0 +1,56 @@
+<body>
+This package contains the <a href="http://cougaar.org">Cougaar</a>
+{@link org.cougaar.core.service.WebServicesService} provider
+and example SOAP applications.
+<p>
+The {@link org.cougaar.lib.web.axis.WebServicesProvider}
+advertises the {@link org.cougaar.core.service.WebServicesService},
+allowing plugins to register their WSDL to receive SOAP calls.
+<p>
+The examples are:<ul>
+
+<li><b>Cougaar-to-External "Distance"</b><br>
+An example of a Cougaar plugin that <b>sends</b> an external SOAP
+call, in this case to a service that calculates the distance
+between any two ZIP codes.  The {@link
+org.cougaar.lib.web.axis.distance.DistanceQueryPlugin} listens
+for blackboard {@link
+org.cougaar.lib.web.axis.distance.DistanceQuery} objects,
+invokes the external service, and sets the {@link
+org.cougaar.lib.web.axis.distance.DistanceQuery} distance field.
+In this example, the {@link
+org.cougaar.lib.web.axis.distance.DistanceQuery} objects are
+created by a simple {@link
+org.cougaar.lib.web.axis.distance.DistanceQueryTest} plugin.
+This example also illustrates how to make synchronous v.s.
+asynchronous SOAP calls.
+</li><p>
+
+<li><b>External-to-Cougaar "BlackboardCount"</b><br>
+An example of a Cougaar plugin that <b>receives</b> external SOAP
+calls, in this case a query for a table of blackboard object
+classnames to their count on the node-agent's blackboard.  The {@link
+org.cougaar.lib.web.axis.blackboardCount.BlackboardCountPlugin}
+registers a WSDL in the {@link
+org.cougaar.core.service.WebServicesService} for "BlackboardCount"
+SOAP requests.  A simple external command-line {@link
+org.cougaar.lib.web.axis.blackboardCount.BlackboardCountClient} can
+be used to test the "BlackboardCount" service.
+</li><p>
+
+<li><b>Cougaar-to-Cougaar "SOAPLinkProtocol"</b><br>
+A Cougaar Message Transport {@link
+org.cougaar.lib.web.axis.mts.SOAPLinkProtocol} that illustrates
+both of the above example uses:<ul>
+  <li>A Cougaar-to-External SOAP caller to <b>send</b>
+  Cougaar agent-to-agent messages</li>
+  <li>An External-to-Cougaar SOAP listener to <b>receive</b>
+  Cougaar agent-to-agent messages</li>
+</ul>
+</li><p>
+
+</ul>
+<p>
+For more detail, see the
+<a href="http://docs.cougaar.org">Cougaar Developers' Guide</a>.
+</body>
