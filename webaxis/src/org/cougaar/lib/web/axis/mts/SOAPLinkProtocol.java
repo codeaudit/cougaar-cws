@@ -25,36 +25,29 @@
  
 package org.cougaar.lib.web.axis.mts;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.ByteArrayOutputStream;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.URI;
 import java.net.URL;
 import java.net.UnknownHostException;
 
-import javax.activation.DataSource;
 import javax.activation.DataHandler;
 import javax.xml.namespace.QName;
 import javax.xml.rpc.ParameterMode;
 import javax.xml.rpc.ServiceException;
 
-import org.apache.axis.AxisFault;
-import org.apache.axis.client.Call;
-import org.apache.axis.client.Service;
-import org.apache.axis.encoding.XMLType;
-import org.apache.axis.utils.Options;
 import org.apache.axis.attachments.OctetStream;
 import org.apache.axis.attachments.OctetStreamDataSource;
+import org.apache.axis.client.Call;
 import org.apache.axis.encoding.ser.BeanDeserializerFactory;
 import org.apache.axis.encoding.ser.BeanSerializerFactory;
 import org.apache.axis.encoding.ser.JAFDataHandlerDeserializerFactory;
 import org.apache.axis.encoding.ser.JAFDataHandlerSerializerFactory;
-
 import org.cougaar.core.component.ServiceAvailableEvent;
 import org.cougaar.core.component.ServiceAvailableListener;
 import org.cougaar.core.component.ServiceBroker;
@@ -66,7 +59,7 @@ import org.cougaar.core.service.WebServicesService;
 import org.cougaar.core.thread.SchedulableStatus;
 import org.cougaar.mts.base.CommFailureException;
 import org.cougaar.mts.base.DestinationLink;
-import org.cougaar.mts.base.LinkProtocol; // javadoc only
+import org.cougaar.mts.base.LinkProtocol;
 import org.cougaar.mts.base.MisdeliveredMessageException;
 import org.cougaar.mts.base.NameLookupException;
 import org.cougaar.mts.base.RPCLinkProtocol;
@@ -630,5 +623,8 @@ public class SOAPLinkProtocol extends RPCLinkProtocol {
             "Invalid SOAP return type: "+
             (ret == null ? "null" : ret.getClass().getName()));
       }
+  }
+
+  protected void releaseNodeServant() {
   }
 }
