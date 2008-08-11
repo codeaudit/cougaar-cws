@@ -250,7 +250,7 @@ public class SOAPLinkProtocol extends RPCLinkProtocol {
    * ServiceAvailabiltyListener in case the service isn't available
    * yet.
    */
-  protected void findOrMakeNodeServant() {
+  protected void ensureNodeServant() {
     if (logger.isDebugEnabled()) {
       logger.debug("findOrMakeNodeServant, servant_made="+servant_made);
     }
