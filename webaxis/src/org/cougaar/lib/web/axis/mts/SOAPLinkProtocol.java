@@ -57,6 +57,7 @@ import org.cougaar.core.service.LoggingService;
 import org.cougaar.core.service.ServletService;
 import org.cougaar.core.service.WebServicesService;
 import org.cougaar.core.thread.SchedulableStatus;
+import org.cougaar.mts.base.AttributedMessage;
 import org.cougaar.mts.base.CommFailureException;
 import org.cougaar.mts.base.DestinationLink;
 import org.cougaar.mts.base.LinkProtocol;
@@ -64,7 +65,6 @@ import org.cougaar.mts.base.MisdeliveredMessageException;
 import org.cougaar.mts.base.NameLookupException;
 import org.cougaar.mts.base.RPCLinkProtocol;
 import org.cougaar.mts.base.UnregisteredNameException;
-import org.cougaar.mts.std.AttributedMessage;
 
 /**
  * This component is a SOAP-based {@link LinkProtocol} that uses

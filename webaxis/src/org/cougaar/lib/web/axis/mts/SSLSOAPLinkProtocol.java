@@ -26,7 +26,7 @@
 package org.cougaar.lib.web.axis.mts;
 
 import org.cougaar.core.service.ServletService;
-import org.cougaar.mts.std.AttributedMessage;
+import org.cougaar.mts.base.AttributedMessage;
 
 /**
  * SSL variation of {@link SOAPLinkProtocol}, which registers
